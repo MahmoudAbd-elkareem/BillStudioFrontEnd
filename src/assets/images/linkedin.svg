@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <g id="Circle_Button_" data-name="Circle Button " transform="translate(-0.162)">
+    <g id="Icon_" data-name="Icon " transform="translate(-0.001 0)">
+      <rect id="Area_ICON:feather_linkedin_SIZE:MEDIUM_STATE:DEFAULT_STYLE:STYLE3_" data-name="Area [ICON:feather/linkedin][SIZE:MEDIUM][STATE:DEFAULT][STYLE:STYLE3]" width="23" height="23" transform="translate(0.162)" fill="#1e5374" opacity="0"/>
+      <g id="Icon" transform="translate(1.303 2.14)">
+        <path id="Path" d="M14.089,6.667a5.755,5.755,0,0,1,5.756,5.756v6.715H16.008V12.423a1.919,1.919,0,1,0-3.837,0v6.715H8.333V12.423A5.756,5.756,0,0,1,14.089,6.667Z" transform="translate(-0.659 -0.911)" fill="#1e5374"/>
+        <rect id="Rect" width="3.837" height="11.512" transform="translate(0 6.715)" fill="#1e5374"/>
+        <circle id="Path-2" data-name="Path" cx="1.919" cy="1.919" r="1.919" transform="translate(0 0)" fill="#1e5374"/>
+      </g>
+    </g>
+  </g>
+</svg>

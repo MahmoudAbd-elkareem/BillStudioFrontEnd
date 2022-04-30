@@ -1,0 +1,26 @@
+.modal-content {
+  border-radius: 20px 20px 0 20px;
+  overflow: inherit;
+  .modal-header {
+    border-bottom: 1px solid var(--color-light-gray);
+    button {
+      right: 27px;
+      left: auto;
+    }
+  }
+  .modal-footer {
+    border-top: 1px solid var(--color-light-gray);
+    padding-top: 15px;
+  }
+}
+.modal {
+  background: rgb(30 30 47 / 30%);
+}
+.footer {
+  .container-fluid {
+    p {
+      color: var(--color-china-clay);
+    }
+  }
+}
+

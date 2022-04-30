@@ -1,0 +1,447 @@
+  <div class="container-xxl" style="direction: rtl;">
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <div class="container-fluid">
+          <div class="navbar-brand">
+           <div class="logo-wrapper ms-5">
+            <div class="logo-section1">
+              <div class="logo-info">
+                <span class="info-1">BILL</span>
+                <span class="info-2">STUDIO</span>
+              </div>
+              <img src="assets/images/logo.svg" alt="" class="logo-icon">
+            </div>
+            <div class="logo-section2">
+              customize your studio
+            </div>
+           </div>
+          </div>
+          <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="javascript()::void">من نحن</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript()::void">فكرتنا</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript()::void">لماذا بيل ستوديو</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript()::void">عملائنا</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <img src="assets/images/instgram.svg" alt="" class="social-icon">
+              <img src="assets/images/linkedin.svg" alt="" class="social-icon">
+              <img src="assets/images/twitter.svg" alt="" class="social-icon">
+              <img src="assets/images/facebook.svg" alt="" class="social-icon">
+              <button class="btn btn-outline-success" (click)="DeactivateModal.show()" type="button">انضم الينا</button>
+              <div
+              bsModal
+              #DeactivateModal="bs-modal"
+              class="modal fade"
+               tabindex="-1"
+               style=" overflow:visible ; z-index: 5000000;"
+               ole="dialog"
+               aria-labelledby="dialog-sizes-name1"
+            >
+              <div class="modal-dialog modal-xl ">
+                <div class="modal-content">
+                  <div class="container-xxl">
+                    <div class="logo-wrapper d-flex align-items-center justify-content-center">
+                      <img src="assets/images/section3/logoo.svg" alt="" class="logo">
+                    </div>
+                    <div class="content-wrapper mt-5">
+                      <div class="request-more">
+                        <img class="request-more__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+                        <div class="request-more__info">
+                          <span class="info-1 f-bold">طلب اضافة ستوديو</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-xl-7 col-12 form-wrapper">
+                        <form [formGroup]="completeform">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="mb-3">
+                                <label for="name"  class="form-label">الاسم ثلاثي</label>
+                                <input type="text"
+                                [ngClass]="{'is-invalid': (completeform?.get('UserName').touched || completeform?.get('UserName').dirty) && !completeform?.get('UserName').valid}"
+                                formControlName="UserName" class="form-control" id="name" placeholder="اضف الاسم بالكامل">
+                                <span class="invalid-feedback">
+                                  <span *ngIf="completeform?.get('UserName').errors?.required">
+                                   هذا الحقل إجباري
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-12">
+                              <div class="mb-3">
+                                <label for="phone"  class="form-label">رقم الجوال</label>
+                                <input type="number"
+                                [ngClass]="{'is-invalid': (completeform?.get('PhoneNumber').touched || completeform?.get('PhoneNumber').dirty) && !completeform?.get('PhoneNumber').valid}"
+                                formControlName="PhoneNumber" class="form-control" id="phone" placeholder="رقم الجوال">
+                                <span class="invalid-feedback">
+                                  <span *ngIf="completeform?.get('PhoneNumber').errors?.required">
+                                    هذا الحقل اجباري
+                                  </span>
+                                  <span
+                                    *ngIf="completeform?.get('PhoneNumber').errors?.pattern">
+                                    الرقم المدخل غير صحيح
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-12 select-wrapper">
+                              <label for="country"  class="form-label">البلد</label>
+                              <select
+                              [ngClass]="{'is-invalid': (completeform?.get('Country').touched || completeform?.get('Country').dirty) && !completeform?.get('Country').valid}"
+                              class="form-select" formControlName="Country" aria-label="Default select example" id="country">
+                                <option selected>اختر البلد</option>
+                                <option value="السعودية">السعودية</option>
+                              </select>
+                              <span class="invalid-feedback">
+                                <span *ngIf="completeform?.get('Country').errors?.required">
+                                  هذا الحقل اجباري
+                                </span>
+                              </span>
+                            </div>
+                            <div class="col-lg-3 col-12 select-wrapper">
+                              <label for="City"  class="form-label">المدينة</label>
+                              <select class="form-select"
+                              [ngClass]="{'is-invalid': (completeform?.get('City').touched || completeform?.get('City').dirty) && !completeform?.get('City').valid}"
+
+                              formControlName="City" aria-label="Default select example" id="country">
+                                <option selected>اختر المحافظة</option>
+                                <option value="الرياض">الرياض</option>
+                                <option value="الدمام">الدمام</option>
+                                <option value="جدة">جدة</option>
+                              </select>
+                              <span class="invalid-feedback">
+                                <span *ngIf="completeform?.get('City').errors?.required">
+                                  هذا الحقل اجباري
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-9 col-12">
+                              <div class="mb-3">
+                                <label for="email"  class="form-label">البريد الالكتروني</label>
+                                <input type="email"
+                                [ngClass]="{'is-invalid': (completeform?.get('Email').touched || completeform?.get('Email').dirty) && !completeform?.get('Email').valid}"
+                                formControlName="Email" class="form-control" id="email" placeholder="اشف بريدك الالكتروني">
+                                <span class="invalid-feedback">
+                                  <span *ngIf="completeform?.get('Email').errors?.required">
+                                    هذا الحقل اجباري
+                                  </span>
+                                  <span
+                                    *ngIf="completeform?.get('Email').errors?.pattern">
+                                   البريد الألكتروني المدخل غير صحيح
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-12 select-wrapper">
+                              <label for="gender" class="form-label">النوع</label>
+                              <select class="form-select"
+                              [ngClass]="{'is-invalid': (completeform?.get('Gender').touched || completeform?.get('Gender').dirty) && !completeform?.get('Gender').valid}"
+                              formControlName="Gender" aria-label="Default select example" id="gender">
+                                <option selected>اختر النوع</option>
+                                <option value="ذكر">ذكر</option>
+                                <option value="أنثي">أنثي</option>
+                              </select>
+                              <span class="invalid-feedback">
+                                <span *ngIf="completeform?.get('Gender').errors?.required">
+                                  هذا الحقل اجباري
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-check form-switch">
+
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (change)="toggleEditable($event)">
+                            <label class="form-check-label" for="flexSwitchCheckChecked">هل تمتلك ستوديو ؟</label>
+                          </div>
+                          <div class="row" *ngIf="hasStudio">
+                            <div class="col-lg-3 col-12 select-wrapper">
+                              <label for="type"  class="form-label">نوع الاستوديو</label>
+                              <select class="form-select" formControlName="StudioType" aria-label="Default select example" id="type">
+                                <option selected>نوع الاستوديو</option>
+                                <option value="داخلي">ستديو صوت</option>
+                                <option value="خارجي">ستديو فيديوهات</option>
+                                <option value="خارجي">ستديو تصوير</option>
+                                <option value="خارجي">ستديو إجتماعات</option>
+                                <option value="خارجي">ستديو خارجي</option>
+                                <option value="خارجي">ستديو داخلي</option>
+                                <option value="خارجي">ستديوهات اخري</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-9 col-12">
+                              <div class="mb-3">
+                                <label for="address" class="form-label">عنوان الاستوديو</label>
+                                <input type="email" formControlName="StudioAdress" class="form-control" id="address" placeholder="عنوان الاستوديو">
+                              </div>
+                            </div>
+                          </div>
+
+                          <button class="btn btn-outline-success mt-2" [disabled]="!completeform.valid"  (click)="AddUser()">انضم الان</button>
+                            <img src="assets/images/section3/close-form.svg" (click)="DeactivateModal.hide() ; completeform.reset()" alt="" class="close-img">
+                        </form>
+                      </div>
+                      <div class="col-xl-5 col-12">
+                        <img src="assets/images/section3/form-side-img.png" alt="" class="side-img">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="language-switcher"><span class="language-switcher__text">English</span> <img src="assets/images/country.svg" alt="" class="language-switcher__icon"> </div>
+            </div>
+            <div class="nav-bar-shadow"></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="section1">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="content-wrapper">
+              <div class="icons-wrapper">
+                <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
+                <img src="assets/images/section1-1.png" alt="" class="sub-img">
+              </div>
+              <div class="info-1">أهلا بك في عالمك</div>
+              <div class="info-2">نقدم لك عالم من الخدمات المفصلة لأصحاب الاستوديوهات تساهم في الارتقاء بخدماتك وزيادة أرباحك</div>
+            </div>
+            <img src="assets/images/section1.3.png" class="" alt="...">
+          </div>
+          <div class="carousel-item">
+            <div class="content-wrapper">
+              <div class="icons-wrapper">
+                <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
+                <img src="assets/images/section1-1.png" alt="" class="sub-img">
+              </div>
+              <div class="info-1">أهلا بك في عالمك</div>
+              <div class="info-2">نقدم لك عالم من الخدمات المفصلة لأصحاب الاستوديوهات تساهم في الارتقاء بخدماتك وزيادة أرباحك</div>
+            </div>
+            <img src="assets/images/section1.3.png" class="" alt="...">
+          </div>
+          <div class="carousel-item">
+            <div class="content-wrapper">
+              <div class="icons-wrapper">
+                <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
+                <img src="assets/images/section1-1.png" alt="" class="sub-img">
+              </div>
+              <div class="info-1">أهلا بك في عالمك</div>
+              <div class="info-2">نقدم لك عالم من الخدمات المفصلة لأصحاب الاستوديوهات تساهم في الارتقاء بخدماتك وزيادة أرباحك</div>
+            </div>
+            <img src="assets/images/section1.3.png" class="" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="section2">
+      <img src="assets/images/section2/insta-camera.png" alt="" class="image-1">
+      <img src="assets/images/section2/orange-triangle.svg" alt="" class="image-2">
+      <img src="assets/images/section2/yellowTriangle.svg" alt="" class="image-3">
+      <div class="bg-camera"></div>
+
+      <div class="content-wrapper">
+        <div class="about-us">
+          <img class="about-us__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+          <div class="about-us__info">
+            <span class="info-1 f-bold">من نحن</span>
+            <span class="info-2">ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على</span>
+          </div>
+        </div>
+
+        <div class="main-info">وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.</div>
+
+        <div class="row align-items-center justify-content-center cards-wrapper1 mb-3">
+          <div class="col-xl-3 col-12 card-1">
+            <img src="assets/images/vedio-camera-shadow.png" alt="">
+            <div class="header">ستوديو فيديوهات</div>
+            <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
+          </div>
+          <div class="col-xl-3 col-12 card-2">
+            <img src="assets/images/speaker-shadow.png" alt="">
+            <div class="header">ستوديو صوت</div>
+            <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
+          </div>
+          <div class="col-xl-3 col-12 card-3">
+            <img src="assets/images/camera-shadow.png" alt="">
+            <div class="header">ستوديو تصوير</div>
+            <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
+          </div>
+          <div class="col-xl-3 col-12 card-4">
+            <img src="assets/images/man-shadow.png" alt="">
+            <div class="header">ستوديو اجتماعات</div>
+            <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
+          </div>
+        </div>
+
+        <div class="row cards-wrapper2">
+          <div class="col-lg-6 col-12 card-1">
+            <img class="img-right" src="assets/images/section2/building.png" alt="">
+            <div class="header">ستوديوهات اخرى</div>
+            <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم لنصوص التجريبية بالتصميم</div>
+          </div>
+          <div class="col-lg-3 col-12 card-2">
+            <img class="mb-20" src="assets/images/section2/house.png" alt="">
+            <div class="header2">ستوديوهات خارجية</div>
+          </div>
+          <div class="col-lg-3 col-12 card-3">
+            <img src="assets/images/section2/mock.png" alt="">
+            <div class="header2">ستوديوهات داخلية</div>
+          </div>
+        </div>
+        <div class="col-12 align-self-center">
+          <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="section3">
+      <img class="image-1" src="assets/images/section2/vedio-camera.png" alt="">
+      <img class="image-2" src="assets/images/section2/yellowTriangle.svg" alt="">
+      <img class="image-3" src="assets/images/section2/circle.svg" alt="">
+
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-xl-7 col-12 p-relative">
+            <div class="our-idea">
+              <img class="our-idea__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+              <div class="our-idea__info">
+                <span class="info-1 f-bold">فكرتنا</span>
+                <span class="info-2">ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على</span>
+              </div>
+            </div>
+
+            <div class="img-wrapper">
+              <img class="image1" src="assets/images/house-1.png" alt="">
+              <img class="image2" src="assets/images/logo-white-shadow.svg" alt="">
+              <img class="image3" src="assets/images/section2/freinds.png" alt="">
+            </div>
+            <p class="note mt-3">بيل ستوديو هو عالم متكامل لخدمة أصحاب الاستوديوهات حيث يمكنك من عرض الاستوديو الخاص بك للإيجار عبر الانترنت في أي وقت ومن أي مكان.</p>
+            <p class="note">كما يمكنك تصفح التجهيزات والمعدات المختلفة والمتاحة للإيجار أو الشراء بيل ستوديو يساعدك على تطوير الاستوديو الخاص بك عبر مجموعة خدمات متكاملة نقدمها لك عبر منصة ذكية آمنة وسهلة الاستخدام</p>
+            <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+            <img class="bg-1" src="assets/images/section2/orange-triangle.svg" alt="">
+          </div>
+          <div class="col-xl-5 col-12 bg-house p-relative">
+            <img class="bg-2" src="assets/images/section2/orange-triangle.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section4">
+      <img class="image-1" src="assets/images/section2/circle.svg" alt="">
+      <img class="image-2" src="assets/images/triangle-yellow-right.svg" alt="">
+
+      <div class="content-wrapper">
+        <div class="why-we">
+          <img class="why-we__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+          <div class="why-we__info">
+            <span class="info-1 f-bold">لماذا بيل ستوديو</span>
+            <span class="info-2">ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على</span>
+          </div>
+        </div>
+        <p class="note mt-4">وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.</p>
+
+        <div class="row">
+          <div class="col-lg-6 col-12">
+
+            <div class="items-wrapper">
+              <div class="item">تطوير متميز للاستوديوهات</div>
+              <div class="item">سهولة الوصول لصانعي المحتوى</div>
+              <div class="item">دخل ثابت</div>
+              <div class="item">نظام مالي امن للحجوزات</div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12 side-img-container">
+            <img class="side-img" src="assets/images/girl.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section5">
+      <img class="image-1" src="assets/images/triangle-yellow-up.svg" alt="">
+      <img class="image-2" src="assets/images/section2/circle.svg" alt="">
+      <img class="image-3" src="assets/images/section2/orange-triangle.svg" alt="">
+
+      <div class="content-wrapper">
+        <div class="our-company">
+          <img class="our-company__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+          <div class="our-company__info">
+            <span class="info-1 f-bold">شركائنا</span>
+            <span class="info-2">ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على</span>
+          </div>
+        </div>
+        <div class="img-pagination">
+          <img class="arrow-img" src="assets/images/arrow-right.svg" alt="">
+          <div class="row w-100 items-wrapper align-items-center justify-content-center">
+            <div class="col-md-6 col-lg-5 col-xl-3 col-12 item"><img src="assets/images/canon.png" alt=""></div>
+            <div class="col-md-6 col-lg-5 col-xl-3 col-12 item"><img src="assets/images/fullfilm.png" alt=""></div>
+            <div class="col-md-6 col-lg-5 col-xl-3 col-12 item"><img src="assets/images/sony.png" alt=""></div>
+            <div class="col-md-6 col-lg-5 col-xl-3 col-12 item"><img src="assets/images/nikon.png" alt=""></div>
+          </div>
+          <img class="arrow-img" src="assets/images/arrow-left.svg" alt="">
+        </div>
+
+      </div>
+    </div>
+
+  <div class="section6">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+            <div class="join-us">
+              <div class="join-us__info">
+                <span class="info-1 f-bold" (click)="DeactivateModal.show()">انضم الينا</span>
+                <span class="info-2 mt-4">وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.</span>
+                <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <img class="side-img" src="assets/images/man-2.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <img class="arrow-up" src="assets/images/up-arrow.svg" alt="">
+        <div class="content">All copyrights reserved 2022 to billstudio</div>
+      </div>
+  </div>
+  <script>
+     document.getElementById('navbar-toggler').addEventListener('click', ()=> {
+      document.getElementById('navbarSupportedContent').classList.toggle('d-block');
+    });
+  </script>
+
