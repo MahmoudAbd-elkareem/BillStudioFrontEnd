@@ -154,6 +154,21 @@ body {
   height: 700px;
   max-width: 100%;
 }
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8%;  /* change this value to required width */
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
 .section1 .carousel .content-wrapper {
   display: inline-flex;
   margin-top: 6rem;
@@ -500,10 +515,11 @@ body {
   border-color: #1d51c2 !important;
 }
 .section3 .bg-house {
-  background-image: url('assets/images/house-shite-shadow.png');
+  background-image: url('assets/images/Vloger-Studio-02.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: -116px;
+  background-position-y: -20px;
+
 }
 .section3 .bg-house .bg-2 {
   position: absolute;
