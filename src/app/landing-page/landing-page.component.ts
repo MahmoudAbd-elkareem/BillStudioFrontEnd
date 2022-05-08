@@ -37,6 +37,7 @@ export class LandingPageComponent implements OnInit {
       Email: new FormControl('' , Validators.compose([Validators.required ,Validators.pattern(RegexPatterns.Email)])),
       Gender: new FormControl('' , Validators.required),
       StudioType: new FormControl(''),
+      hasStudio: new FormControl(false),
       StudioAdress: new FormControl(''),
 
     });
@@ -74,16 +75,8 @@ hasStudio : boolean
       this.DeactivateModal.hide()
       this.completeform.reset()
       this.notifier.notify('success', "تم تسجيل الإستديو بنجاح");
-      this.hasStudio = false
-      this.userDto= {
-        name:"",
-        phoneNumber:0,
-        studios:[],
-        city:"",
-        country:"",
-        email:"",
-        gender:"",
-      }
+      this.hasStudio = false;
+      this.userDto.studios = []
      }
    )
 
