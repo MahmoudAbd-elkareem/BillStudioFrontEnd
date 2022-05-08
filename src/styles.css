@@ -64,12 +64,11 @@ width: 110px;
 height: 100px;
 margin-top: 14px;
 margin-right: -21px;
-z-index: 1050;
 }
 .logo-wrapper .logo-section1 .logo-info {
 display: flex;
 flex-direction: column;
-z-index: 1060;
+z-index: 10;
 }
 .logo-wrapper .logo-section1 .logo-info .info-1 {
 text-align: end;
@@ -88,7 +87,7 @@ font-size: 10px;
 color: #707070;
 text-align: center;
 margin-top: -15px;
-z-index: 1060;
+z-index: 10;
 letter-spacing: 2px;
 }
 .f-bold {
