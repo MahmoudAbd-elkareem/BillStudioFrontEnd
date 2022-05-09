@@ -9,6 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule } from 'angular-notifier';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,6 +23,7 @@ import { NotifierModule } from 'angular-notifier';
   imports: [
     BrowserModule,
     ModalModule,
+    RouterModule.forRoot([]),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -33,9 +39,22 @@ import { NotifierModule } from 'angular-notifier';
         // animations :{ enabled:true },
         // theme:"material design"
       }
-      )
+      ),
+      TranslateModule.forRoot({
+        defaultLanguage: 'ar',
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
+      NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

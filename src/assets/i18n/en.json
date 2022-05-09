@@ -1,0 +1,45 @@
+{
+"CHOOSELANGUAGE":"Choose Language",
+"ARABIC":"Arabic",
+"ENGLISH":"English",
+"FRENCH":"French",
+"ABOUTUS":{
+  "TITLE":"About us",
+  "TEXT":"We believe that the content industry depends primarily on creativity and that the more capabilities and services available, the greater the opportunities for creators to provide high-quality content, so the Bill Studio platform provides an area of ​​interaction and communication, providing all capabilities and providing all services from renting studios of all kinds, technical and marketing consultations, developing and raising The efficiency of the studios and their equipping with the latest equipment and capabilities, and the provision of opportunities for effective communication with those interested in the field and those contributors to its development, as well as the financing services ... All of this is done easily and on one electronic platform and in the presence of a financial guarantee for all parties"
+},
+"OURIDEA":{
+  "TITLE":"Our idea",
+  "FIRSTTEXT":"Bell Studio is an integrated world of service for studio owners where you can offer your studio for rent online at any time and from anywhere.",
+  "SECONDTEXT":" You can also browse the various facilities and equipment available for rent or purchase Bell Studio helps you develop your studio through an integrated set of services that we provide to you through a safe and easy to use smart platform"
+},
+"WHYBILLSTUDIO":{
+  "TITLE":"Why bill studio",
+  "TEXT":"Register with us and present your services and the capabilities of your studio on the largest directory of professional content developers in the Middle East and join a world of professionals specialized in the content industry as well as technical equipment, marketing, advertising and production companies. Bell Studio is a full-service online platform that offers studio and equipment rental capabilities on a secure and easy-to-use online platform. Bell Studio provides you with:",
+  "FIELDONE":"Stable income through a secure financial system to organize reservations",
+  "FIELDTWO":"Easy access to content creators on a secure and easy-to-use platform",
+  "FIELDTHREE":"Outstanding studio development through our approved equipment supplier partners",
+  "FIELDFOUR":"Financing and leasing systems for equipment and supplies that provide you with the required development at the right time"
+},
+"OURCLIENTS":{
+  "TITLE":"Our clients",
+  "TEXT":"We work with many specialized companies and authorized distributors in establishing, developing and equipping studios from the stage of infrastructure, establishment and finishes to installing equipment, insulation, decorations, appropriate furniture and renovations, all at reasonable prices and also with different payment systems provided by major financing companies."
+},
+"JOINUS":"Join us",
+"WELCOMETOYOURWRLD":"Welcome to your world",
+"WEOFFERYOUAWORLDOFDETAILEDSERVICESFORSTUDIOOWNERSTHATCONTRIBUTETOUPGRADINGYOURSERVICESANDINCREASINGYOURPROFITS":"We offer you a world of detailed services for studio owners that contribute to upgrading your services and increasing your profits",
+"JOINUSNOW":"Join us now",
+"JOINTHENEWGENERATIONOFBESPOKETECHNOLOGYANDMARKETINGSERVICESTODEVELOPYOURSTUDIOSANDINCREASEYOURPROFITS":"Join the new generation of bespoke technology and marketing services to develop your studios and increase your profits",
+"WEBRINGTHECONTENTOWNERCLOSERTOYOU":"We bring the content owner closer to you",
+"ANINTEGRATEDDIRECTORYOFSTUDIOSANDEQUIPMENTAVAILABLEFORRENTSERVINGCONTENTCREATORSINALLCOUNTRIESOFTHEWORLD":"An integrated directory of studios and equipment available for rent serving content creators in all countries of the world",
+"VIDEOSTUDIOS":"Video Studios",
+"SOUNDSTUDIOS":"Sound Studios",
+"PHOTOGRAPHYSTUDIOS":"Photography Studio",
+"MEETINGSSTUDIOS":"Meeting Studio",
+"OTHERSTUDIOS":"Other Studios",
+"EXTERNALSTUDIOS":"External Studios",
+"INTERNALSTUDIOS":"Internal Studios"
+
+
+
+
+}

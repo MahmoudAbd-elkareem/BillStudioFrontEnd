@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { NotifierService } from 'angular-notifier';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../Model/model';
@@ -16,15 +17,53 @@ export class LandingPageComponent implements OnInit {
   @ViewChild("DeactivateModal")  DeactivateModal
 
   completeform: FormGroup;
-  userDto : User = {
-    name:"",
-    phoneNumber:0,
-    studios:[],
-    city:"",
-    country:"",
-    email:"",
-    gender:"",
-  }
+  userDto : User =new User()
+  languageName :string = "English"
+  language = this.translateService.currentLang;
+  cities= ["الرياض"
+  ,"جدة"
+  ,"المدينة المنورة"
+  ,"تبوك"
+  ,"الدمام"
+  ,"الاحساء"
+  ,"القطيف"
+  ,"خميس مشيط"
+  ,"المظيلف"
+  ,"الهفوف"
+  ,"المبرز"
+  ,"الطائف"
+  ,"نجران"
+  ,"حفر الباطن"
+  ,"الجبيل"
+  ,"ضباء"
+  ,"الخرج"
+  ,"الثقبة"
+  ,"ينبع البحر"
+  ,"الخبر"
+  ,"غرغر"
+  ,"الحوية"
+  ,"عنيزة"
+  ,"سكاكا"
+  ,"جيزان"
+  ,"القريات"
+  ,"الظهران"
+  ,"الباحة"
+  ,"الزلفي"
+  ,"الرس"
+  ,"وادي الدواسر"
+  ,"بيشة"
+  ,"سيهات"
+  ,"شروره"
+  ,"بحره"
+  ,"تاروت"
+  ,"الدوادمي"
+  ,"صبياء"
+  ,"بيش"
+  ,"احد رفيدة"
+  ,"الفريش"
+  ,"بارق"
+  ,"الحوطة"
+  ,"الافلاج"]
 
 
   buildCompleteForm(){
@@ -37,8 +76,9 @@ export class LandingPageComponent implements OnInit {
       Email: new FormControl('' , Validators.compose([Validators.required ,Validators.pattern(RegexPatterns.Email)])),
       Gender: new FormControl('' , Validators.required),
       StudioType: new FormControl(''),
+      hasStudio: new FormControl(false),
       StudioAdress: new FormControl(''),
-
+      StudioName: new FormControl(''),
     });
   }
 hasStudio : boolean
@@ -50,7 +90,11 @@ hasStudio : boolean
  }
   }
 
-  constructor(private notifier:NotifierService,private service :ServicesService ,private toastr: ToastrService) { }
+  changeLanaguage(chosedlang : string) {
+    this.translateService.use(chosedlang);
+  }
+
+  constructor(  public translateService: TranslateService,private notifier:NotifierService,private service :ServicesService ,private toastr: ToastrService) { }
 
 
 
@@ -64,26 +108,19 @@ hasStudio : boolean
      this.userDto.country =this.completeform.value.Country,
      this.userDto.email=this.completeform.value.Email,
      this.userDto.gender=this.completeform.value.Gender,
-     this.hasStudio?
-     this.userDto.studios.push({
-       adress:this.completeform.value.StudioAdress,
-       studioType:this.completeform.value.StudioType
-     }) : this.userDto.studios = []
+     this.userDto.studioName =this.completeform.value.StudioName
+     this.completeform.value.StudioAdress?
+     this.userDto.studios=[{
+      adress:this.completeform.value.StudioAdress,
+      studioType:this.completeform.value.StudioType
+     }] : this.userDto.studios = []
    this.service.addUser(this.userDto).subscribe(
      res=>{
       this.DeactivateModal.hide()
       this.completeform.reset()
       this.notifier.notify('success', "تم تسجيل الإستديو بنجاح");
-      this.hasStudio = false
-      this.userDto= {
-        name:"",
-        phoneNumber:0,
-        studios:[],
-        city:"",
-        country:"",
-        email:"",
-        gender:"",
-      }
+      this.hasStudio = false;
+      this.userDto.studios = []
      }
    )
 
