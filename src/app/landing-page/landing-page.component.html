@@ -22,16 +22,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="javascript()::void">من نحن</a>
+                <a class="nav-link active" href="javascript()::void"> {{"ABOUTUS.TITLE"|translate}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript()::void">فكرتنا</a>
+                <a class="nav-link" href="javascript()::void">{{"OURIDEA.TITLE" | translate}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript()::void">لماذا بيل ستوديو</a>
+                <a class="nav-link" href="javascript()::void">{{"WHYBILLSTUDIO.TITLE" | translate}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript()::void">عملائنا</a>
+                <a class="nav-link" href="javascript()::void">{{"OURCLIENTS.TITLE" | translate}}</a>
               </li>
             </ul>
             <div class="d-flex">
@@ -39,172 +39,26 @@
               <img src="assets/images/linkedin.svg" alt="" class="social-icon">
               <img src="assets/images/twitter.svg" alt="" class="social-icon">
               <img src="assets/images/facebook.svg" alt="" class="social-icon">
-              <button class="btn btn-outline-success" (click)="DeactivateModal.show()" type="button">انضم الينا</button>
-              <div
-              bsModal
-              #DeactivateModal="bs-modal"
-              class="modal fade"
-               tabindex="-1"
+              <button class="btn btn-outline-success" (click)="DeactivateModal.show()" type="button">{{"JOINUS" | translate}}</button>
 
-               ole="dialog"
-               aria-labelledby="dialog-sizes-name1"
+            <div
+            ngbDropdown><p
+            id="dropdownBasic1"
+            href="javascript:void(0)"
+            ngbDropdownToggle   class="link-table languageLink"   [routerLink]="">{{"CHOOSELANGUAGE"|translate}}</p>
+              <ul
+              class="dropdown-navbar"
+              ngbDropdownMenu
+              aria-labelledby="dropdownBasic1"
             >
-              <div class="modal-dialog modal-xl ">
-                <div class="modal-content">
-                  <div class="container-xxl">
-                    <div class="logo-wrapper d-flex align-items-center justify-content-center">
-                      <img src="assets/images/section3/logoo.svg" alt="" class="logo">
-                    </div>
-                    <div class="content-wrapper mt-5">
-                      <div class="request-more">
-                        <img class="request-more__icon" src="assets/images/section2/blure-triangle.svg" alt="">
-                        <div class="request-more__info">
-                          <span class="info-1 f-bold">طلب اضافة ستوديو</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="col-xl-6 col-12 form-wrapper">
-                        <form [formGroup]="completeform">
-                          <div class="row">
-                            <div class="col-12">
-                              <div class="mb-3">
-                                <label for="name"  class="form-label">الاسم ثلاثي</label>
-                                <input type="text"
-                                [ngClass]="{'is-invalid': (completeform?.get('UserName').touched || completeform?.get('UserName').dirty) && !completeform?.get('UserName').valid}"
-                                formControlName="UserName" class="form-control" id="name" placeholder="اضف الاسم بالكامل">
-                                <span class="invalid-feedback">
-                                  <span *ngIf="completeform?.get('UserName').errors?.required">
-                                   هذا الحقل إجباري
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-6 col-12">
-                              <div class="mb-3">
-                                <label for="phone"  class="form-label">رقم الجوال</label>
-                                <input type="number"
-                                [ngClass]="{'is-invalid': (completeform?.get('PhoneNumber').touched || completeform?.get('PhoneNumber').dirty) && !completeform?.get('PhoneNumber').valid}"
-                                formControlName="PhoneNumber" class="form-control" id="phone" placeholder="رقم الجوال">
-                                <span class="invalid-feedback">
-                                  <span *ngIf="completeform?.get('PhoneNumber').errors?.required">
-                                    هذا الحقل اجباري
-                                  </span>
-                                  <span
-                                    *ngIf="completeform?.get('PhoneNumber').errors?.pattern">
-                                    الرقم المدخل غير صحيح
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-12 select-wrapper">
-                              <label for="country"  class="form-label">البلد</label>
-                              <select
-                              [ngClass]="{'is-invalid': (completeform?.get('Country').touched || completeform?.get('Country').dirty) && !completeform?.get('Country').valid}"
-                              class="form-select" formControlName="Country" aria-label="Default select example" id="country">
-                                <option selected>اختر البلد</option>
-                                <option value="السعودية">السعودية</option>
-                              </select>
-                              <span class="invalid-feedback">
-                                <span *ngIf="completeform?.get('Country').errors?.required">
-                                  هذا الحقل اجباري
-                                </span>
-                              </span>
-                            </div>
-                            <div class="col-lg-3 col-12 select-wrapper">
-                              <label for="City"  class="form-label">المدينة</label>
-                              <select class="form-select"
-                              [ngClass]="{'is-invalid': (completeform?.get('City').touched || completeform?.get('City').dirty) && !completeform?.get('City').valid}"
+            <li  class="languageLink" (click)="changeLanaguage('ar')" ><span class="language-switcher__text">{{"ARABIC" | translate}}</span> <img src="assets/images/country.svg" alt="" class="language-switcher__icon"> </li>
+            <li class=" languageLink" (click)="changeLanaguage('en')" ><span class="language-switcher__text">{{"ENGLISH" | translate}}</span> <img src="assets/images/country.svg" alt="" class="language-switcher__icon"> </li>
+            <li class=" languageLink" (click)="changeLanaguage('fn')" ><span class="language-switcher__text">{{"FRENCH" | translate}}</span> <img src="assets/images/country.svg" alt="" class="language-switcher__icon"> </li>
+            <li class="separator d-lg-none"></li>
 
-                              formControlName="City" aria-label="Default select example" id="country">
-                                <option selected>اختر المحافظة</option>
-                                <option value="الرياض">الرياض</option>
-                                <option value="الدمام">الدمام</option>
-                                <option value="جدة">جدة</option>
-                              </select>
-                              <span class="invalid-feedback">
-                                <span *ngIf="completeform?.get('City').errors?.required">
-                                  هذا الحقل اجباري
-                                </span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-9 col-12">
-                              <div class="mb-3">
-                                <label for="email"  class="form-label">البريد الالكتروني</label>
-                                <input type="email"
-                                [ngClass]="{'is-invalid': (completeform?.get('Email').touched || completeform?.get('Email').dirty) && !completeform?.get('Email').valid}"
-                                formControlName="Email" class="form-control" id="email" placeholder="اشف بريدك الالكتروني">
-                                <span class="invalid-feedback">
-                                  <span *ngIf="completeform?.get('Email').errors?.required">
-                                    هذا الحقل اجباري
-                                  </span>
-                                  <span
-                                    *ngIf="completeform?.get('Email').errors?.pattern">
-                                   البريد الألكتروني المدخل غير صحيح
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-12 select-wrapper">
-                              <label for="gender" class="form-label">النوع</label>
-                              <select class="form-select"
-                              [ngClass]="{'is-invalid': (completeform?.get('Gender').touched || completeform?.get('Gender').dirty) && !completeform?.get('Gender').valid}"
-                              formControlName="Gender" aria-label="Default select example" id="gender">
-                                <option selected>اختر النوع</option>
-                                <option value="ذكر">ذكر</option>
-                                <option value="أنثي">أنثي</option>
-                              </select>
-                              <span class="invalid-feedback">
-                                <span *ngIf="completeform?.get('Gender').errors?.required">
-                                  هذا الحقل اجباري
-                                </span>
-                              </span>
-                            </div>
-                          </div>
-                          <div class="form-check form-switch">
-
-                            <input #flexSwitchCheckChecked formControlName="hasStudio"  class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (change)="toggleEditable($event)">
-                            <label class="form-check-label" for="flexSwitchCheckChecked">هل تمتلك ستوديو ؟</label>
-                          </div>
-                          <div class="row" *ngIf="hasStudio">
-                            <div class="col-lg-3 col-12 select-wrapper">
-                              <label for="type"  class="form-label">نوع الاستوديو</label>
-                              <select class="form-select" formControlName="StudioType" aria-label="Default select example" id="type">
-                                <option selected>نوع الاستوديو</option>
-                                <option value="داخلي">ستديو صوت</option>
-                                <option value="خارجي">ستديو فيديوهات</option>
-                                <option value="خارجي">ستديو تصوير</option>
-                                <option value="خارجي">ستديو إجتماعات</option>
-                                <option value="خارجي">ستديو خارجي</option>
-                                <option value="خارجي">ستديو داخلي</option>
-                                <option value="خارجي">ستديوهات اخري</option>
-                              </select>
-                            </div>
-                            <div class="col-lg-9 col-12">
-                              <div class="mb-3">
-                                <label for="address" class="form-label">عنوان الاستوديو</label>
-                                <input type="email" formControlName="StudioAdress" class="form-control" id="address" placeholder="عنوان الاستوديو">
-                              </div>
-                            </div>
-                          </div>
-
-                          <button class="btn btn-outline-success mt-2" [disabled]="!completeform.valid"  (click)="AddUser()">انضم الان</button>
-                            <img src="assets/images/section3/close-form.svg" (click)="DeactivateModal.hide() ; completeform.reset() ; hasStudio =false" alt="" class="close-img">
-                        </form>
-                      </div>
-                      <div class="col-xl-6 col-12">
-                        <img src="assets/images/Vloger-Studio-02.png" alt="" class="side-img">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </ul>
             </div>
-              <div class="language-switcher"><span class="language-switcher__text">English</span> <img src="assets/images/country.svg" alt="" class="language-switcher__icon"> </div>
+
             </div>
             <div class="nav-bar-shadow"></div>
           </div>
@@ -221,8 +75,8 @@
                 <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
                 <img src="assets/images/Music-Studio-01.png" alt="" class="sub-img">
               </div>
-              <div class="info-1">أهلا بك في عالمك</div>
-              <div class="info-2">نقدم لك عالم من الخدمات المفصلة لأصحاب الاستوديوهات تساهم في الارتقاء بخدماتك وزيادة أرباحك</div>
+              <div class="info-1">{{"WELCOMETOYOURWRLD" | translate}}</div>
+              <div class="info-2">{{"WEOFFERYOUAWORLDOFDETAILEDSERVICESFORSTUDIOOWNERSTHATCONTRIBUTETOUPGRADINGYOURSERVICESANDINCREASINGYOURPROFITS"|translate}}</div>
             </div>
             <img style="height: fit-content;"  src="assets/images/TV-Show.png"alt="...">
           </div>
@@ -232,8 +86,8 @@
                 <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
                 <img src="assets/images/Music-Studio-02.png" alt="" class="sub-img">
               </div>
-              <div class="info-1">أنضم إلينا الآن</div>
-              <div class="info-2">انضم للجيل الجديد من الخدمات التكنولوجية والتسويقية المفصلة لتطوير استديوهاتك وزيادة أرباحك</div>
+              <div class="info-1">{{"JOINUSNOW"|translate}}</div>
+              <div class="info-2">{{"JOINTHENEWGENERATIONOFBESPOKETECHNOLOGYANDMARKETINGSERVICESTODEVELOPYOURSTUDIOSANDINCREASEYOURPROFITS"|translate}}</div>
             </div>
             <img  style="height: fit-content;" src="assets/images/Art-Studio-01.png" class="" alt="...">
           </div>
@@ -243,10 +97,8 @@
                 <img src="assets/images/blureCircle.svg" alt="" class="circle-img">
                 <img src="assets/images/Art-Studio-02.png" alt="" class="sub-img">
               </div>
-              <div class="info-1">نقرب صاحب المحتوى لك
-              </div>
-              <div class="info-2">دليل متكامل للأستوديوهات والتجهيزات المتاحة للإيجار يخدم صانعي المحتوى في كل دول العالم
-              </div>
+              <div class="info-1">{{"WEBRINGTHECONTENTOWNERCLOSERTOYOU"|translate}}</div>
+              <div class="info-2">{{"ANINTEGRATEDDIRECTORYOFSTUDIOSANDEQUIPMENTAVAILABLEFORRENTSERVINGCONTENTCREATORSINALLCOUNTRIESOFTHEWORLD"|translate}}</div>
             </div>
             <img style="height: fit-content;" src="assets/images/Music-Studio-03.png" class="" alt="...">
           </div>
@@ -272,30 +124,30 @@
         <div class="about-us">
           <img class="about-us__icon" src="assets/images/section2/blure-triangle.svg" alt="">
           <div class="about-us__info">
-            <span class="info-1 f-bold">من نحن</span>
-            <span class="info-2">نحن نؤمن أن صناعة المحتوى تعتمد في الأساس على الإبداع وأنه كلما توافرت الإمكانيات والخدمات كلما زادت فرص المبدعين لتقديم محتوى ذوجودة عالية, لذلك توفر منصة بل ستوديوbill studio مساحة من التفاعل والتواصل وتقديم جميع الإمكانيات وتوفير جميع الخدمات من تأجير استديوهات بمختلف أنواعها واستشارات فنية وتسويقية وتطوير ورفع كفاءة الاستوديوهات وتجهيزها بأحدث الأجهزة والأمكانيات وإتاحة فرص التواصل الفعال مع المهتمين بالمجال والمساهمين في تطويره وأيضا الخدمات التمويلية ... كل ذلك يتم بسهولة ويسر وعلى منصة الكترونية واحدة وفي وجود ضمان مالي لجميع الأطراف.
+            <span class="info-1 f-bold"> {{"ABOUTUS.TITLE"|translate}}</span>
+            <span class="info-2">{{"ABOUTUS.TEXT"|translate}}
             </span>
           </div>
         </div>
         <div class="row align-items-center justify-content-center cards-wrapper1 mb-3">
           <div class="col-xl-3 col-12 card-1">
             <img src="assets/images/vedio-camera-shadow.png" alt="">
-            <div class="header">ستوديو فيديوهات</div>
+            <div class="header">{{"VIDEOSTUDIOS"|translate}}</div>
             <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
           </div>
           <div class="col-xl-3 col-12 card-2">
             <img src="assets/images/speaker-shadow.png" alt="">
-            <div class="header">ستوديو صوت</div>
+            <div class="header">{{"SOUNDSTUDIOS"|translate}}</div>
             <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
           </div>
           <div class="col-xl-3 col-12 card-3">
             <img src="assets/images/camera-shadow.png" alt="">
-            <div class="header">ستوديو تصوير</div>
+            <div class="header">{{"PHOTOGRAPHYSTUDIOS"|translate}}</div>
             <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
           </div>
           <div class="col-xl-3 col-12 card-4">
             <img src="assets/images/man-shadow.png" alt="">
-            <div class="header">ستوديو اجتماعات</div>
+            <div class="header">{{"MEETINGSSTUDIOS"|translate}}</div>
             <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم</div>
           </div>
         </div>
@@ -303,20 +155,20 @@
         <div class="row cards-wrapper2">
           <div class="col-lg-6 col-12 card-1">
             <img class="img-right" src="assets/images/section2/building.png" alt="">
-            <div class="header">ستوديوهات اخرى</div>
+            <div class="header">{{"OTHERSTUDIOS"|translate}}</div>
             <div class="info">عند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم لنصوص التجريبية بالتصميم</div>
           </div>
           <div class="col-lg-3 col-12 card-2">
             <img class="mb-20" src="assets/images/section2/house.png" alt="">
-            <div class="header2">ستوديوهات خارجية</div>
+            <div class="header2">{{"EXTERNALSTUDIOS"|translate}}</div>
           </div>
           <div class="col-lg-3 col-12 card-3">
             <img src="assets/images/section2/mock.png" alt="">
-            <div class="header2">ستوديوهات داخلية</div>
+            <div class="header2">{{"INTERNALSTUDIOS"|translate}}</div>
           </div>
         </div>
         <div class="col-12 align-self-center">
-          <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+          <button class="btn btn-outline-success" (click)="DeactivateModal.show()">{{"JOINUS" | translate}}</button>
         </div>
       </div>
 
@@ -334,7 +186,7 @@
             <div class="our-idea">
               <img class="our-idea__icon" src="assets/images/section2/blure-triangle.svg" alt="">
               <div class="our-idea__info">
-                <span class="info-1 f-bold">فكرتنا</span>
+                <span class="info-1 f-bold">{{"OURIDEA.TITLE"|translate}}</span>
               </div>
             </div>
 
@@ -343,9 +195,9 @@
               <img class="image2" src="assets/images/logo-white-shadow.svg" alt="">
               <img class="image3" src="assets/images/section2/freinds.png" alt="">
             </div>
-            <p class="note mt-3">بيل ستوديو هو عالم متكامل لخدمة أصحاب الاستوديوهات حيث يمكنك من عرض الاستوديو الخاص بك للإيجار عبر الانترنت في أي وقت ومن أي مكان.</p>
-            <p class="note">كما يمكنك تصفح التجهيزات والمعدات المختلفة والمتاحة للإيجار أو الشراء بيل ستوديو يساعدك على تطوير الاستوديو الخاص بك عبر مجموعة خدمات متكاملة نقدمها لك عبر منصة ذكية آمنة وسهلة الاستخدام</p>
-            <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+            <p class="note mt-3">{{"OURIDEA.FIRSTTEXT"|translate}}</p>
+            <p class="note">{{"OURIDEA.SECONDTEXT"|translate}}</p>
+            <button class="btn btn-outline-success" (click)="DeactivateModal.show()">{{"JOINUS" | translate}}</button>
             <img class="bg-1" src="assets/images/section2/orange-triangle.svg" alt="">
           </div>
           <div class="col-xl-5 col-12 bg-house p-relative">
@@ -364,28 +216,18 @@
         <div class="why-we">
           <img class="why-we__icon" src="assets/images/section2/blure-triangle.svg" alt="">
           <div class="why-we__info">
-            <span class="info-1 f-bold">لماذا بيل ستوديو</span>
+            <span class="info-1 f-bold">{{"WHYBILLSTUDIO.TITLE"|translate}}</span>
           </div>
         </div>
-        <p class="note mt-4">سجل معنا واعرض خدماتك وامكانيات الاستوديو الخاص بك على أكبر دليل لمطوري المحتوى المحترفين بالشرق الأوسط وأنضم لعالم من المحترفين المتخصصين في صناعة المحتوى وكذلك التجهيزات الفنية وشركات التسويق والدعاية والانتاج. بيل ستوديو هي منصة إلكترونية متكاملة الخدمات تتيح أمكانيات عرض الاستوديوهات والتجهيزات للإيجار عبر منصة إلكترونية أمنة وسهلة الاستخدام. بيل ستوديو توفر لك:</p>
-        <ul>
-          <li class="note mt-4"> 	دخل ثابت عبر نظام مالي آمن لتنظيم الحجوزات
-           </li>
-           <li class="note mt-4"> سهولة الوصول لصانعي المحتوى عبر منصة آمنة وسهلة الاستخدام
-           </li>
-           <li class="note mt-4">تطوير متميز للأستوديوهات عبر شركائنا من موردي التجهيزات المعتمدين
-          </li>
-          <li class="note mt-4">نظم تمويل وتأجير للمعدات والتجهيزات توفر لك التطوير المطلوب في الوقت المناسب</li>
-        </ul>
-
+        <p class="note mt-4">{{"WHYBILLSTUDIO.TEXT"|translate}}</p>
         <div class="row">
           <div class="col-lg-6 col-12">
 
             <div class="items-wrapper">
-              <div class="item">تطوير متميز للاستوديوهات</div>
-              <div class="item">سهولة الوصول لصانعي المحتوى</div>
-              <div class="item">دخل ثابت</div>
-              <div class="item">نظام مالي امن للحجوزات</div>
+              <div class="item">{{"WHYBILLSTUDIO.FIELDONE"|translate}}</div>
+              <div class="item">{{"WHYBILLSTUDIO.FIELDTWO"|translate}}</div>
+              <div class="item">{{"WHYBILLSTUDIO.FIELDTHREE"|translate}}</div>
+              <div class="item">{{"WHYBILLSTUDIO.FIELDFOUR"|translate}}</div>
             </div>
           </div>
           <div class="col-lg-6 col-12 side-img-container">
@@ -405,8 +247,8 @@
         <div class="our-company">
           <img class="our-company__icon" src="assets/images/section2/blure-triangle.svg" alt="">
           <div class="our-company__info">
-            <span class="info-1 f-bold">شركائنا</span>
-            <span class="info-2" style="width: 70%;">نعمل مع العديد من الشركات المتخصصة والموزعين المعتمدين في تأسيس وتطوير وتجهيز الاستوديوهات من مرحلة البنية التحتية والتأسيس والتشطيبات وصولا الى تركيب الاجهزة وأعمال العزل والديكورات والفرش المناسب والتجديدات كل ذلك بأسعار مناسبة وأيضا بأنظمة سداد مختلفة مقدمة من كبرى شركات التمويل.
+            <span class="info-1 f-bold">{{"OURCLIENTS.TITLE"|translate}}</span>
+            <span class="info-2" style="width: 70%;">{{"OURCLIENTS.TEXT"|translate}}
             </span>
           </div>
         </div>
@@ -430,10 +272,10 @@
           <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
             <div class="join-us">
               <div class="join-us__info">
-                <span class="info-1 f-bold" (click)="DeactivateModal.show()">انضم الينا</span>
+                <span class="info-1 f-bold" (click)="DeactivateModal.show()">{{"JOINUS" | translate}}</span>
                 <span class="info-2 mt-4">بيل ستوديو هي بوابتك لعالم متميز من الخدمات الحصرية المصممة لمساعدة صانعي المحتوى المحترفين أنضم الآن وأحصل على فرصة فريدة للوصول لأكبر صانعي المحتوى في الشرق الأوسط وأبدأ الآن في تطوير أستوديوهاتك وأعمالك في سهولة وأمان
                 </span>
-                <button class="btn btn-outline-success" (click)="DeactivateModal.show()">انضم الينا</button>
+                <button class="btn btn-outline-success" (click)="DeactivateModal.show()">{{"JOINUS" | translate}}</button>
               </div>
             </div>
           </div>
@@ -448,6 +290,173 @@
         <div class="content">All copyrights reserved 2022 to billstudio</div>
       </div>
   </div>
+  <div
+  bsModal
+  #DeactivateModal="bs-modal"
+  class="modal fade"
+   tabindex="-1"
+
+   ole="dialog"
+   aria-labelledby="dialog-sizes-name1"
+>
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content">
+      <div class="container-xxl">
+        <div class="logo-wrapper d-flex align-items-center justify-content-center">
+          <img src="assets/images/section3/logoo.svg" alt="" class="logo">
+        </div>
+        <div class="content-wrapper mt-5">
+          <div class="request-more">
+            <img class="request-more__icon" src="assets/images/section2/blure-triangle.svg" alt="">
+            <div class="request-more__info">
+              <span class="info-1 f-bold">طلب اضافة ستوديو</span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-xl-6 col-12 form-wrapper">
+            <form [formGroup]="completeform">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="name"  class="form-label">الاسم ثلاثي</label>
+                    <input type="text"
+                    [ngClass]="{'is-invalid': (completeform?.get('UserName').touched || completeform?.get('UserName').dirty) && !completeform?.get('UserName').valid}"
+                    formControlName="UserName" class="form-control" id="name" placeholder="اضف الاسم بالكامل">
+                    <span class="invalid-feedback">
+                      <span *ngIf="completeform?.get('UserName').errors?.required">
+                       هذا الحقل إجباري
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-12">
+                  <div class="mb-3">
+                    <label for="address" class="form-label">اسم الاستوديو</label>
+                    <input type="email" formControlName="StudioName" class="form-control" id="address" placeholder="اسم الاستوديو">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="mb-3">
+                    <label for="phone"  class="form-label">رقم الجوال</label>
+                    <input type="number"
+                    [ngClass]="{'is-invalid': (completeform?.get('PhoneNumber').touched || completeform?.get('PhoneNumber').dirty) && !completeform?.get('PhoneNumber').valid}"
+                    formControlName="PhoneNumber" class="form-control" id="phone" placeholder="رقم الجوال">
+                    <span class="invalid-feedback">
+                      <span *ngIf="completeform?.get('PhoneNumber').errors?.required">
+                        هذا الحقل اجباري
+                      </span>
+                      <span
+                        *ngIf="completeform?.get('PhoneNumber').errors?.pattern">
+                        الرقم المدخل غير صحيح
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-12 select-wrapper">
+                  <label for="country"  class="form-label">البلد</label>
+                  <select
+                  [ngClass]="{'is-invalid': (completeform?.get('Country').touched || completeform?.get('Country').dirty) && !completeform?.get('Country').valid}"
+                  class="form-select" formControlName="Country" aria-label="Default select example" id="country">
+                    <option selected>اختر البلد</option>
+                    <option value="السعودية">السعودية</option>
+                  </select>
+                  <span class="invalid-feedback">
+                    <span *ngIf="completeform?.get('Country').errors?.required">
+                      هذا الحقل اجباري
+                    </span>
+                  </span>
+                </div>
+                <div class="col-lg-3 col-12 select-wrapper">
+                  <label for="City"  class="form-label">المدينة</label>
+                  <select class="form-select"
+                  [ngClass]="{'is-invalid': (completeform?.get('City').touched || completeform?.get('City').dirty) && !completeform?.get('City').valid}"
+                  formControlName="City" aria-label="Default select example" id="country">
+                  <option [ngValue]="undefined" hidden>اختر المدينة  </option>
+                    <option *ngFor="let item of cities">{{item}}</option>
+                  </select>
+                  <span class="invalid-feedback">
+                    <span *ngIf="completeform?.get('City').errors?.required">
+                      هذا الحقل اجباري
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-9 col-12">
+                  <div class="mb-3">
+                    <label for="email"  class="form-label">البريد الالكتروني</label>
+                    <input type="email"
+                    [ngClass]="{'is-invalid': (completeform?.get('Email').touched || completeform?.get('Email').dirty) && !completeform?.get('Email').valid}"
+                    formControlName="Email" class="form-control" id="email" placeholder="اشف بريدك الالكتروني">
+                    <span class="invalid-feedback">
+                      <span *ngIf="completeform?.get('Email').errors?.required">
+                        هذا الحقل اجباري
+                      </span>
+                      <span
+                        *ngIf="completeform?.get('Email').errors?.pattern">
+                       البريد الألكتروني المدخل غير صحيح
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-12 select-wrapper">
+                  <label for="gender" class="form-label">النوع</label>
+                  <select class="form-select"
+                  [ngClass]="{'is-invalid': (completeform?.get('Gender').touched || completeform?.get('Gender').dirty) && !completeform?.get('Gender').valid}"
+                  formControlName="Gender" aria-label="Default select example" id="gender">
+                    <option selected>اختر النوع</option>
+                    <option value="ذكر">ذكر</option>
+                    <option value="أنثي">أنثي</option>
+                  </select>
+                  <span class="invalid-feedback">
+                    <span *ngIf="completeform?.get('Gender').errors?.required">
+                      هذا الحقل اجباري
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="form-check form-switch">
+
+                <input #flexSwitchCheckChecked formControlName="hasStudio"  class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (change)="toggleEditable($event)">
+                <label class="form-check-label" for="flexSwitchCheckChecked">هل تمتلك ستوديو ؟</label>
+              </div>
+              <div class="row" *ngIf="hasStudio">
+                <div class="col-lg-3 col-12 select-wrapper">
+                  <label for="type"  class="form-label">نوع الاستوديو</label>
+                  <select class="form-select" formControlName="StudioType" aria-label="Default select example" id="type">
+                    <option selected>نوع الاستوديو</option>
+                    <option value="داخلي">ستديو صوت</option>
+                    <option value="خارجي">ستديو فيديوهات</option>
+                    <option value="خارجي">ستديو تصوير</option>
+                    <option value="خارجي">ستديو إجتماعات</option>
+                    <option value="خارجي">ستديو خارجي</option>
+                    <option value="خارجي">ستديو داخلي</option>
+                    <option value="خارجي">ستديوهات اخري</option>
+                  </select>
+                </div>
+                <div class="col-lg-9 col-12">
+                  <div class="mb-3">
+                    <label for="address" class="form-label">عنوان الاستوديو</label>
+                    <input type="email" formControlName="StudioAdress" class="form-control" id="address" placeholder="عنوان الاستوديو">
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-outline-success mt-2" [disabled]="!completeform.valid"  (click)="AddUser()">انضم الان</button>
+                <img src="assets/images/section3/close-form.svg" (click)="DeactivateModal.hide() ; completeform.reset() ; hasStudio =false" alt="" class="close-img">
+            </form>
+          </div>
+          <div class="col-xl-6 col-12">
+            <img src="assets/images/Vloger-Studio-02.png" alt="" class="side-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <script>
      document.getElementById('navbar-toggler').addEventListener('click', ()=> {
       document.getElementById('navbarSupportedContent').classList.toggle('d-block');
